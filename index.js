@@ -4,7 +4,7 @@ import pg from "pg";
 import dotenv from "dotenv";
 
 const app = express();
-const port = 3000;
+const port = 10000;
 
 dotenv.config({ path: './.env' });
 
