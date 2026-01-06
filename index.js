@@ -37,10 +37,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-const result = await db.query("SELECT * FROM users");
+const result = await db.query("SELECT track_no, track_name AS title, artist, cds.title AS cd_title FROM tracks JOIN cds ON cd_id = cds.id ORDER BY cd_id ASC, track_no ASC;");
   console.log(result.rows);
-  res.send(result.rows); 
-  res.send("done");
+  res.render("index.ejs",{selection: result.rows}); 
+
 });
 
 

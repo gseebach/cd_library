@@ -6,6 +6,31 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <h1>Private CD collection</h1>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>CD title</th>
+                <th>Track #</th>
+                <th>Track title</th>
+                <th>Artist</th>
+            </tr>
+            <tr>
+
+            <% selection.forEach(dataset => { %>
+                <td><%= dataset.cd_title%></td>
+                <td><%= dataset.track_no%></td>
+                <td><%= dataset.title%></td>
+                <td><%= dataset.artist%></td>
+            </tr>
+                   
+
+            <% });%>
+            
+        </table>
+    </div>
     
 </body>
 </html>
